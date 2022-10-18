@@ -53,6 +53,7 @@ int print_string(va_list types, char buffer[],
 int print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
+
 /* Functions to print numbers */
 int print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -70,15 +71,19 @@ int print_hexa_upper(va_list types, char buffer[],
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
+int print_address(va_list l, flags_t *f);
+
 /* Function to print non printable characters */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+
 
 /* Funcion to print memory address */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Functions to handle other specifiers */
+int get_flag(char s, flags_t *f);
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
